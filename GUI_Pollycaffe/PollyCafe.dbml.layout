@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9.125" name="PollyCafe">
+  <DataContextMoniker Name="/PollyCafeDataContext" />
+  <nestedChildShapes>
+    <classShape Id="1563aa79-3e99-4963-b860-1a12fb61da16" absoluteBounds="6.25, 1, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/PollyCafeDataContext/ChiTietPhieu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="121d1b8d-04a1-40e6-8631-0b1c32f956f2" absoluteBounds="6.265, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59032221-5a3d-4cc8-9ee0-de14e1a460af" absoluteBounds="0.75, 1.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PollyCafeDataContext/TheLuuDong" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3fcc8bb4-a6c0-4aa6-b546-46fff9f244a9" absoluteBounds="0.765, 1.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="81e27bee-3afc-4c01-8999-1484bb02cd46" absoluteBounds="0.75, 7.25, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/PollyCafeDataContext/LoaiSanPham" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f697e99-ecea-4de2-b1bf-1fa5a723883d" absoluteBounds="0.765, 7.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a9d6a14d-4d23-4f43-bb2e-6ddc0a87c7e9" absoluteBounds="0.75, 3.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/PollyCafeDataContext/NhanVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab1f39f7-f41c-4eb7-b1aa-51c0d7367810" absoluteBounds="0.765, 4.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="171aee58-fe41-4a0d-bbf4-f87407007ec1" absoluteBounds="3.5, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/PollyCafeDataContext/PhieuBanHang" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8f7b38b9-7c85-437a-b754-405bdb40f63e" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0805b87b-d874-4a1a-934b-36db4d4f4df9" absoluteBounds="3.5, 6.875, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/PollyCafeDataContext/SanPham" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b604a86e-b620-44cd-8790-18958edd71cb" absoluteBounds="3.515, 7.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 1.88544840494792); (6.25 : 1.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PollyCafeDataContext/PhieuBanHang/PhieuBanHang_ChiTietPhieu" />
+      <nodes>
+        <classShapeMoniker Id="171aee58-fe41-4a0d-bbf4-f87407007ec1" />
+        <classShapeMoniker Id="1563aa79-3e99-4963-b860-1a12fb61da16" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.85659912109375); (4.5 : 4.85659912109375); (4.5 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PollyCafeDataContext/NhanVien/NhanVien_PhieuBanHang" />
+      <nodes>
+        <classShapeMoniker Id="a9d6a14d-4d23-4f43-bb2e-6ddc0a87c7e9" />
+        <classShapeMoniker Id="171aee58-fe41-4a0d-bbf4-f87407007ec1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.94314697265625); (3.5 : 1.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PollyCafeDataContext/TheLuuDong/TheLuuDong_PhieuBanHang" />
+      <nodes>
+        <classShapeMoniker Id="59032221-5a3d-4cc8-9ee0-de14e1a460af" />
+        <classShapeMoniker Id="171aee58-fe41-4a0d-bbf4-f87407007ec1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.85659912109375); (7.25 : 7.85659912109375); (7.25 : 2.77089680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PollyCafeDataContext/SanPham/SanPham_ChiTietPhieu" />
+      <nodes>
+        <classShapeMoniker Id="0805b87b-d874-4a1a-934b-36db4d4f4df9" />
+        <classShapeMoniker Id="1563aa79-3e99-4963-b860-1a12fb61da16" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.94314697265625); (3.5 : 7.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PollyCafeDataContext/LoaiSanPham/LoaiSanPham_SanPham" />
+      <nodes>
+        <classShapeMoniker Id="81e27bee-3afc-4c01-8999-1484bb02cd46" />
+        <classShapeMoniker Id="0805b87b-d874-4a1a-934b-36db4d4f4df9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

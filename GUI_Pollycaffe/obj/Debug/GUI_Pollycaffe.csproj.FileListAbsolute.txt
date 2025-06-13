@@ -1,0 +1,51 @@
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\bin\Debug\GUI_Pollycaffe.exe.config
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\bin\Debug\GUI_Pollycaffe.exe
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\bin\Debug\BLL_Pollycafe.dll
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\bin\Debug\DTO_Pollycafe.dll
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\bin\Debug\Guna.UI2.dll
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\bin\Debug\BLL_Pollycafe.pdb
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\bin\Debug\DTO_Pollycafe.pdb
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.csproj.AssemblyReference.cache
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.exe.config
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmDangNhap.resources
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmDMK.resources
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.Properties.Resources.resources
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.Welcome.resources
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.csproj.GenerateResource.cache
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.csproj.CoreCompileInputs.cache
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Poll.9ADEDEFD.Up2Date
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.exe
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.pdb
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\bin\Debug\GUI_Pollycaffe.pdb
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.Main.resources
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmQLNV.resources
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmLSP.resources
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmSanPham.resources
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmPBH.resources
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmTheLuuDong.resources
+D:\DAM_LAB\Pollycaffe\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmTK.resources
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\bin\Debug\GUI_Pollycaffe.exe.config
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\bin\Debug\GUI_Pollycaffe.exe
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\bin\Debug\GUI_Pollycaffe.pdb
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\bin\Debug\BLL_Pollycafe.dll
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\bin\Debug\DTO_Pollycafe.dll
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\bin\Debug\Guna.UI2.dll
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\bin\Debug\BLL_Pollycafe.pdb
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\bin\Debug\DTO_Pollycafe.pdb
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.csproj.AssemblyReference.cache
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmDangNhap.resources
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmDMK.resources
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmLSP.resources
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmPBH.resources
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmQLNV.resources
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmSanPham.resources
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmTheLuuDong.resources
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmTK.resources
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.Main.resources
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.Properties.Resources.resources
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.Welcome.resources
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.csproj.GenerateResource.cache
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.csproj.CoreCompileInputs.cache
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Poll.9ADEDEFD.Up2Date
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.exe
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.pdb

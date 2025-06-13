@@ -1,0 +1,22 @@
+D:\DAM_LAB\Pollycaffe\BLL_Pollycafe\bin\Debug\BLL_Pollycafe.dll
+D:\DAM_LAB\Pollycaffe\BLL_Pollycafe\bin\Debug\BLL_Pollycafe.pdb
+D:\DAM_LAB\Pollycaffe\BLL_Pollycafe\bin\Debug\DAL_Pollycafe.dll
+D:\DAM_LAB\Pollycaffe\BLL_Pollycafe\bin\Debug\DTO_Pollycafe.dll
+D:\DAM_LAB\Pollycaffe\BLL_Pollycafe\bin\Debug\DAL_Pollycafe.pdb
+D:\DAM_LAB\Pollycaffe\BLL_Pollycafe\bin\Debug\DTO_Pollycafe.pdb
+D:\DAM_LAB\Pollycaffe\BLL_Pollycafe\obj\Debug\BLL_Pollycafe.csproj.AssemblyReference.cache
+D:\DAM_LAB\Pollycaffe\BLL_Pollycafe\obj\Debug\BLL_Pollycafe.csproj.CoreCompileInputs.cache
+D:\DAM_LAB\Pollycaffe\BLL_Pollycafe\obj\Debug\BLL_Poll.756AF73F.Up2Date
+D:\DAM_LAB\Pollycaffe\BLL_Pollycafe\obj\Debug\BLL_Pollycafe.dll
+D:\DAM_LAB\Pollycaffe\BLL_Pollycafe\obj\Debug\BLL_Pollycafe.pdb
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\BLL_Pollycafe\bin\Debug\BLL_Pollycafe.dll
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\BLL_Pollycafe\bin\Debug\BLL_Pollycafe.pdb
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\BLL_Pollycafe\bin\Debug\DAL_Pollycafe.dll
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\BLL_Pollycafe\bin\Debug\DTO_Pollycafe.dll
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\BLL_Pollycafe\bin\Debug\DAL_Pollycafe.pdb
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\BLL_Pollycafe\bin\Debug\DTO_Pollycafe.pdb
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\BLL_Pollycafe\obj\Debug\BLL_Pollycafe.csproj.AssemblyReference.cache
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\BLL_Pollycafe\obj\Debug\BLL_Pollycafe.csproj.CoreCompileInputs.cache
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\BLL_Pollycafe\obj\Debug\BLL_Poll.756AF73F.Up2Date
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\BLL_Pollycafe\obj\Debug\BLL_Pollycafe.dll
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\BLL_Pollycafe\obj\Debug\BLL_Pollycafe.pdb
