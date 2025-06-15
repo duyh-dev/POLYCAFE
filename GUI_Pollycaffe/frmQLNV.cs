@@ -17,6 +17,7 @@ namespace GUI_Pollycaffe
         {
             NapNV();
         }
+
         private void NapNV()
         {
             using (var db = new PollyCafeDataContext())
@@ -32,15 +33,17 @@ namespace GUI_Pollycaffe
                         TrangThai = nv.TrangThai ? "Hoạt động" : "Không hoạt động"
                     })
                     .ToList();
-
+                dgvNhanVien.AutoGenerateColumns = true;
                 dgvNhanVien.DataSource = dsNV;
+                Application.DoEvents();
 
                 // Set column headers
-                string[] headers = { "Mã NV", "Họ tên", "Email", "Mật khẩu", "Vai trò", "Trạng thái" };
+                string[] headers = { " ", "Mã NV", "Họ tên", "Email", "Mật khẩu", "Vai trò", "Trạng thái" };
                 for (int i = 0; i < headers.Length; i++)
                 {
                     dgvNhanVien.Columns[i].HeaderText = headers[i];
                 }
+                dgvNhanVien.ColumnHeadersHeight = 30;
             }
         }
 
@@ -160,7 +163,7 @@ namespace GUI_Pollycaffe
 
                 string maNV = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
 
-                if (MessageBox.Show("Bạn có chắc muốn xóa nhân viên này?", "Xác nhận", 
+                if (MessageBox.Show("Bạn có chắc muốn xóa nhân viên này?", "Xác nhận",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     using (var db = new PollyCafeDataContext())
@@ -200,23 +203,23 @@ namespace GUI_Pollycaffe
 
         private void DgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && e.RowIndex < dgvNhanVien.Rows.Count)
             {
                 var row = dgvNhanVien.Rows[e.RowIndex];
-                txtMNV.Text = row.Cells[0].Value.ToString();
-                txtTNV.Text = row.Cells[1].Value.ToString();
-                txtEmail.Text = row.Cells[2].Value.ToString();
-                txtMK.Text = row.Cells[3].Value.ToString();
-
-                string vaiTro = row.Cells[4].Value.ToString();
-                rboQuanLy.Checked = vaiTro == "Admin";
-                rboNhanVien.Checked = !rboQuanLy.Checked;
-
-                string trangThai = row.Cells[5].Value.ToString();
-                ckTrangThai.Checked = trangThai == "Hoạt động";
+                txtMNV.Text = row.Cells["MaNhanVien"].Value.ToString();
+                txtTNV.Text = row.Cells["HoTen"].Value.ToString();
+                txtEmail.Text = row.Cells["Email"].Value.ToString();
+                txtMK.Text = row.Cells["MatKhau"].Value.ToString();
+                // Cập nhật radio button cho vai trò
+                if (row.Cells["VaiTro"].Value.ToString() == "Admin")
+                {
+                    rboQuanLy.Checked = true;
+                }
+                else
+                {
+                    rboNhanVien.Checked = true;
+                }
             }
         }
-
-     
     }
 }

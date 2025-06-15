@@ -29,11 +29,15 @@ namespace GUI_Pollycaffe
                   TrangThai = t.TrangThai == true ? "Đang hoạt động" : "Ngừng hoạt động"
               })
         .ToList();
+            dgvTLD.Columns["MaThe"].HeaderText = "Mã thẻ";
+            dgvTLD.Columns["ChuSoHuu"].HeaderText = "Chủ sở hữu";
+            dgvTLD.Columns["TrangThai"].HeaderText = "Trạng thái";
+            dgvTLD.ColumnHeadersHeight = 25;
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
             if (string.IsNullOrWhiteSpace(txtMaThe.Text) || string.IsNullOrWhiteSpace(txtCSH.Text))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin.");
@@ -56,6 +60,7 @@ namespace GUI_Pollycaffe
 
             pl.TheLuuDongs.InsertOnSubmit(tld);
             pl.SubmitChanges();
+            MessageBox.Show("✅ Thêm thẻ lưu động thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             NapThe();
         }
 
@@ -72,6 +77,7 @@ namespace GUI_Pollycaffe
             tld.TrangThai = ckbTT.Checked;
 
             pl.SubmitChanges();
+            MessageBox.Show("✏️ Cập nhật thẻ lưu động thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             NapThe();
         }
 
@@ -86,7 +92,12 @@ namespace GUI_Pollycaffe
 
             pl.TheLuuDongs.DeleteOnSubmit(tld);
             pl.SubmitChanges();
-            NapThe();
+            MessageBox.Show("🗑️ Xóa thẻ lưu động thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            txtMaThe.Clear();
+            txtCSH.Clear();
+            ckbTT.Checked = false;
+            txtMaThe.Enabled = true;
+            txtMaThe.Focus();
         }
 
         private void btnLM_Click(object sender, EventArgs e)
@@ -94,8 +105,11 @@ namespace GUI_Pollycaffe
             txtMaThe.Clear();
             txtCSH.Clear();
             ckbTT.Checked = false;
+            txtMaThe.Enabled = true;
             txtMaThe.Focus();
+            NapThe();
         }
+
 
         private void dgvTLD_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -106,7 +120,10 @@ namespace GUI_Pollycaffe
                 txtCSH.Text = row.Cells["ChuSoHuu"].Value.ToString();
                 string tt = row.Cells["TrangThai"].Value.ToString();
                 ckbTT.Checked = tt == "Đang hoạt động";
+
+                txtMaThe.Enabled = false;
             }
         }
+
     }
 }

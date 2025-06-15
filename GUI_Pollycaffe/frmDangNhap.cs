@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
@@ -30,44 +32,53 @@ namespace GUI_Pollycaffe
             btnThoat.Click += (s, e) => this.Close();
         }
 
-        private void BtnDN_Click(object sender, EventArgs e)
+        private bool _isLoggingIn = false;
+
+        private async void BtnDN_Click(object sender, EventArgs e)
         {
-            string email = txtTDN.Text.Trim();
-            string matkhau = txtMK.Text;
+            if (_isLoggingIn) return;
+            _isLoggingIn = true;
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(matkhau))
+            try
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                string email = txtTDN.Text.Trim();
+                string matkhau = txtMK.Text;
+
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(matkhau))
+                {
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var nhanvien = db.NhanViens.FirstOrDefault(n => n.Email == email);
+
+                if (nhanvien == null)
+                {
+                    MessageBox.Show("Tài khoản không tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (nhanvien.MatKhau != matkhau)
+                {
+                    MessageBox.Show("Sai mật khẩu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Nếu đăng nhập thành công
+                MessageBox.Show("Đăng nhập thành công!\nXin chào: " + nhanvien.HoTen, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                await Task.Delay(1000);
+
+                this.Hide();
+
+                Main frm = new Main();
+                frm.FormClosed += (s, args) => Application.Exit();
+                frm.Show();
             }
-
-            // Tìm nhân viên khớp với email và mật khẩu, và có trạng thái đang hoạt động (1)
-            var nv = db.NhanViens.FirstOrDefault(n => n.Email == email && n.MatKhau == matkhau && n.TrangThai);
-
-            if (nv != null)
+            finally
             {
-                MessageBox.Show("Đăng nhập thành công!\nXin chào: " + nv.HoTen, "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Main m = new Main();
-                m.ShowDialog();
-                // Mở form chính ở đây nếu có (ví dụ: frmMain main = new frmMain(); main.Show(); this.Hide();)
-            }
-            else
-            {
-                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu, hoặc tài khoản đã bị khóa.", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                _isLoggingIn = false;
             }
         }
-
-        private void linkfrmDMK_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            frmDMK dmk = new frmDMK();
-            dmk.ShowDialog();
-        }
-
-        private void frmDangNhap_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             DialogResult ctrl = MessageBox.Show("Bạn muốn thoát ?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Question);

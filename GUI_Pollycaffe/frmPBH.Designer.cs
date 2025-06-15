@@ -46,7 +46,7 @@
             this.btnThemCT = new Guna.UI2.WinForms.Guna2Button();
             this.btnThemPhieu = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtThanhTien = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtSoLuong = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDonGia = new Guna.UI2.WinForms.Guna2TextBox();
@@ -59,7 +59,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayTao = new System.Windows.Forms.DateTimePicker();
             this.rdoDTT = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rdoCXN = new Guna.UI2.WinForms.Guna2RadioButton();
             this.cboMT = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -212,7 +212,6 @@
             this.btnLM.Size = new System.Drawing.Size(123, 43);
             this.btnLM.TabIndex = 6;
             this.btnLM.Text = "Làm mới";
-            this.btnLM.Click += new System.EventHandler(this.btnLM_Click);
             // 
             // btnXoaPhieu
             // 
@@ -260,7 +259,6 @@
             this.btnXoaCT.Size = new System.Drawing.Size(123, 43);
             this.btnXoaCT.TabIndex = 6;
             this.btnXoaCT.Text = "Xóa Chi tiết";
-            this.btnXoaCT.Click += new System.EventHandler(this.btnXoaCT_Click);
             // 
             // btnSuaCT
             // 
@@ -276,7 +274,6 @@
             this.btnSuaCT.Size = new System.Drawing.Size(123, 43);
             this.btnSuaCT.TabIndex = 6;
             this.btnSuaCT.Text = "Sửa Chi tiết";
-            this.btnSuaCT.Click += new System.EventHandler(this.btnSuaCT_Click);
             // 
             // btnThemCT
             // 
@@ -292,7 +289,6 @@
             this.btnThemCT.Size = new System.Drawing.Size(170, 43);
             this.btnThemCT.TabIndex = 6;
             this.btnThemCT.Text = "Thêm Chi tiết";
-            this.btnThemCT.Click += new System.EventHandler(this.btnThemCT_Click);
             // 
             // btnThemPhieu
             // 
@@ -312,7 +308,7 @@
             // 
             // guna2GroupBox2
             // 
-            this.guna2GroupBox2.Controls.Add(this.guna2TextBox1);
+            this.guna2GroupBox2.Controls.Add(this.txtThanhTien);
             this.guna2GroupBox2.Controls.Add(this.label5);
             this.guna2GroupBox2.Controls.Add(this.txtSoLuong);
             this.guna2GroupBox2.Controls.Add(this.txtDonGia);
@@ -329,26 +325,26 @@
             this.guna2GroupBox2.TabIndex = 5;
             this.guna2GroupBox2.Text = "Chi tiết phiếu";
             // 
-            // guna2TextBox1
+            // txtThanhTien
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.Enabled = false;
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(202, 190);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.ReadOnly = true;
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(206, 35);
-            this.guna2TextBox1.TabIndex = 8;
+            this.txtThanhTien.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtThanhTien.DefaultText = "";
+            this.txtThanhTien.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtThanhTien.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtThanhTien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtThanhTien.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtThanhTien.Enabled = false;
+            this.txtThanhTien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtThanhTien.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtThanhTien.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtThanhTien.Location = new System.Drawing.Point(202, 190);
+            this.txtThanhTien.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtThanhTien.Name = "txtThanhTien";
+            this.txtThanhTien.PlaceholderText = "";
+            this.txtThanhTien.ReadOnly = true;
+            this.txtThanhTien.SelectedText = "";
+            this.txtThanhTien.Size = new System.Drawing.Size(206, 35);
+            this.txtThanhTien.TabIndex = 8;
             // 
             // label5
             // 
@@ -377,7 +373,6 @@
             this.txtSoLuong.SelectedText = "";
             this.txtSoLuong.Size = new System.Drawing.Size(206, 35);
             this.txtSoLuong.TabIndex = 8;
-            this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             // 
             // txtDonGia
             // 
@@ -397,7 +392,6 @@
             this.txtDonGia.SelectedText = "";
             this.txtDonGia.Size = new System.Drawing.Size(206, 35);
             this.txtDonGia.TabIndex = 8;
-            this.txtDonGia.TextChanged += new System.EventHandler(this.txtDonGia_TextChanged);
             // 
             // cboSP
             // 
@@ -413,7 +407,6 @@
             this.cboSP.Name = "cboSP";
             this.cboSP.Size = new System.Drawing.Size(207, 36);
             this.cboSP.TabIndex = 5;
-            this.cboSP.SelectedIndexChanged += new System.EventHandler(this.cboSP_SelectedIndexChanged);
             // 
             // guna2HtmlLabel8
             // 
@@ -453,7 +446,7 @@
             this.guna2GroupBox1.Controls.Add(this.label3);
             this.guna2GroupBox1.Controls.Add(this.label2);
             this.guna2GroupBox1.Controls.Add(this.label1);
-            this.guna2GroupBox1.Controls.Add(this.dateTimePicker1);
+            this.guna2GroupBox1.Controls.Add(this.dtpNgayTao);
             this.guna2GroupBox1.Controls.Add(this.rdoDTT);
             this.guna2GroupBox1.Controls.Add(this.rdoCXN);
             this.guna2GroupBox1.Controls.Add(this.cboMT);
@@ -506,13 +499,12 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Mã phiếu";
             // 
-            // dateTimePicker1
+            // dtpNgayTao
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(521, 132);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(175, 27);
-            this.dateTimePicker1.TabIndex = 8;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dtpNgayTao.Location = new System.Drawing.Point(521, 132);
+            this.dtpNgayTao.Name = "dtpNgayTao";
+            this.dtpNgayTao.Size = new System.Drawing.Size(175, 27);
+            this.dtpNgayTao.TabIndex = 8;
             // 
             // rdoDTT
             // 
@@ -531,7 +523,6 @@
             this.rdoDTT.UncheckedState.BorderThickness = 2;
             this.rdoDTT.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdoDTT.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rdoDTT.CheckedChanged += new System.EventHandler(this.rdoDTT_CheckedChanged);
             // 
             // rdoCXN
             // 
@@ -550,7 +541,6 @@
             this.rdoCXN.UncheckedState.BorderThickness = 2;
             this.rdoCXN.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdoCXN.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rdoCXN.CheckedChanged += new System.EventHandler(this.rdoCXN_CheckedChanged);
             // 
             // cboMT
             // 
@@ -566,7 +556,6 @@
             this.cboMT.Name = "cboMT";
             this.cboMT.Size = new System.Drawing.Size(180, 36);
             this.cboMT.TabIndex = 5;
-            this.cboMT.SelectedIndexChanged += new System.EventHandler(this.cboMT_SelectedIndexChanged);
             // 
             // cboMNV
             // 
@@ -582,7 +571,6 @@
             this.cboMNV.Name = "cboMNV";
             this.cboMNV.Size = new System.Drawing.Size(207, 36);
             this.cboMNV.TabIndex = 5;
-            this.cboMNV.SelectedIndexChanged += new System.EventHandler(this.cboMNV_SelectedIndexChanged);
             // 
             // txtMP
             // 
@@ -602,7 +590,6 @@
             this.txtMP.SelectedText = "";
             this.txtMP.Size = new System.Drawing.Size(207, 31);
             this.txtMP.TabIndex = 4;
-            this.txtMP.TextChanged += new System.EventHandler(this.txtMP_TextChanged);
             // 
             // guna2HtmlLabel6
             // 
@@ -699,7 +686,6 @@
             this.Controls.Add(this.guna2TabControl1);
             this.Name = "frmPBH";
             this.Text = "Phiếu bán hàng";
-            this.Load += new System.EventHandler(this.frmPBH_Load);
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTP)).EndInit();
@@ -732,7 +718,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel11;
         private Guna.UI2.WinForms.Guna2RadioButton rdoDTT;
         private Guna.UI2.WinForms.Guna2RadioButton rdoCXN;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtThanhTien;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel9;
         private Guna.UI2.WinForms.Guna2Button btnThanhToan;
         private Guna.UI2.WinForms.Guna2Button btnLM;
@@ -746,7 +732,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpNgayTao;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2DataGridView dgvCTP;
         private Guna.UI2.WinForms.Guna2DataGridView dgvPBH;

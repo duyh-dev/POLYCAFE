@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
+using GUI_PolyCafe;
 
 namespace GUI_Pollycaffe
 {
@@ -12,9 +14,30 @@ namespace GUI_Pollycaffe
 
         private void Main_Load(object sender, EventArgs e)
         {
+            // Thiết lập màu nền
+            this.BackColor = Color.WhiteSmoke;
+
+            // Tùy chỉnh giao diện menuStrip
+            menuStrip1.BackColor = Color.SteelBlue;
+            menuStrip1.ForeColor = Color.White;
+            menuStrip1.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+
+            // Đổi màu khi rê chuột vào menu item
+            foreach (ToolStripMenuItem item in menuStrip1.Items)
+            {
+                item.MouseEnter += (s, args) => item.BackColor = Color.LightSkyBlue;
+                item.MouseLeave += (s, args) => item.BackColor = Color.SteelBlue;
+            }
+
+            // Thiết lập tiêu đề form
+            this.Text = "PolyCafe - Hệ thống quản lý";
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-       
+
+
         private void QLNV_Click(object sender, EventArgs e)
         {
             frmQLNV nv = new frmQLNV();
@@ -47,7 +70,7 @@ namespace GUI_Pollycaffe
 
         private void ThongKe_Click(object sender, EventArgs e)
         {
-            frmTK tk = new frmTK();
+            frmThongKe tk = new frmThongKe();
             tk.Show();
         }
     }

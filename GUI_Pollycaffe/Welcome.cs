@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace GUI_Pollycaffe
 {
@@ -11,45 +13,46 @@ namespace GUI_Pollycaffe
         {
             InitializeComponent();
 
-            // Cài đặt timer tick mỗi 30ms
+            // Đặt opacity về đầy đủ
+            this.Opacity = 1.0;
+
+            progressBar1.Maximum = 100;
+            progressBar1.Value = 0;
+
             timer1.Interval = 30;
             timer1.Tick += timer1_Tick;
             timer1.Start();
-
-            // Gán giá trị ban đầu cho progress bar
-            progressBar1.Value = 0;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private async void timer1_Tick(object sender, EventArgs e)
         {
-            progressValue += 1;
-            progressBar1.Value = progressValue;
+            progressValue++;
 
-            // Hiển thị phần trăm tải
-            this.Text = "Loading... " + progressValue + "%";
+            progressBar1.Value = progressValue;
+            this.Text = $"Loading... {progressValue}%";
 
             if (progressValue >= 100)
             {
                 timer1.Stop();
+                fadeOutTimer.Start();
 
-                try
-                {
-                    // Mở form đăng nhập khi tiến trình hoàn tất
-                    frmDangNhap loginForm = new frmDangNhap();
-                    this.Hide();
-                    loginForm.Show();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi khi mở form đăng nhập: " + ex.Message);
-                }
+
+            }
+        }
+        private void fadeOutTimer_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity > 0)
+            {
+                this.Opacity -= 0.05; // giảm từ 1.0 về 0.0
+            }
+            else
+            {
+                fadeOutTimer.Stop();
+
+                this.Hide();
+                new frmDangNhap().Show();
             }
         }
 
-        // Nếu có xử lý khi giá trị progress bar thay đổi, có thể thêm vào đây
-        private void progressBar1_ValueChanged(object sender, EventArgs e)
-        {
-            // Hiện tại chưa cần xử lý gì thêm
-        }
     }
 }

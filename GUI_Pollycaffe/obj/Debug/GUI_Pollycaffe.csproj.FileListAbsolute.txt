@@ -40,7 +40,6 @@ C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\D
 C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmQLNV.resources
 C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmSanPham.resources
 C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmTheLuuDong.resources
-C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.frmTK.resources
 C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.Main.resources
 C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.Properties.Resources.resources
 C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.Welcome.resources
@@ -49,3 +48,4 @@ C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\D
 C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Poll.9ADEDEFD.Up2Date
 C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.exe
 C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_Pollycaffe.pdb
+C:\Users\duyh6\Documents\Zalo Received Files\POLLYCAFE-main\GUI_Pollycaffe\obj\Debug\GUI_PolyCafe.frmThongKe.resources

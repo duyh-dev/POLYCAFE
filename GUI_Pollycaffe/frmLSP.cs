@@ -6,136 +6,158 @@ namespace GUI_Pollycaffe
 {
     public partial class frmLSP : Form
     {
-        private PollyCafeDataContext db = new PollyCafeDataContext(); // Kết nối LINQ to SQL
-
+        PollyCafeDataContext db = new PollyCafeDataContext();
         public frmLSP()
         {
             InitializeComponent();
-            LoadData(); // Tải dữ liệu khi form khởi động
         }
 
-        // Tải dữ liệu từ DB lên DataGridView
-        private void LoadData()
+        private void frmLoaiSanPham_Load(object sender, EventArgs e)
         {
-            dgvLSP.DataSource = db.LoaiSanPhams.Select(lsp => new
-            {
-                MaLSP = lsp.MaLoai,
-                TenLSP = lsp.TenLoai,
-                GhiChu = lsp.GhiChu
-            }).ToList();
+            LoadLoaiSanPham();
         }
 
-        // Thêm loại sản phẩm
+        private void LoadLoaiSanPham()
+        {
+            var list = db.LoaiSanPhams
+                .Select(lsp => new
+                {
+                    lsp.MaLoai,
+                    lsp.TenLoai,
+                    lsp.GhiChu
+                })
+                .ToList();
+            dgvLSP.DataSource = list;
+            dgvLSP.Columns["MaLoai"].HeaderText = "Mã loại sản phẩm";
+            dgvLSP.Columns["TenLoai"].HeaderText = "Tên loại sản phẩm";
+            dgvLSP.Columns["GhiChu"].HeaderText = "Ghi chú";
+            dgvLSP.ColumnHeadersHeight = 23;
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtMLSP.Text) || string.IsNullOrEmpty(txtTLSP.Text))
+            // Kiểm tra đầu vào
+            if (string.IsNullOrWhiteSpace(txtMLSP.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ Mã và Tên loại sản phẩm!", "Lỗi");
+                MessageBox.Show("Vui lòng nhập mã loại sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMLSP.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtTLSP.Text))
+            {
+                MessageBox.Show("Vui lòng nhập tên loại sản phẩm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTLSP.Focus();
+                return;
+            }
+
+            // Kiểm tra trùng mã loại
+            var daTonTai = db.LoaiSanPhams.Any(l => l.MaLoai == txtMLSP.Text.Trim());
+            if (daTonTai)
+            {
+                MessageBox.Show("❗ Mã loại sản phẩm đã tồn tại!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMLSP.Focus();
                 return;
             }
 
             try
             {
-                var newLSP = new LoaiSanPham
+                LoaiSanPham loaiSP = new LoaiSanPham
                 {
-                    MaLoai = txtMLSP.Text,
-                    TenLoai = txtTLSP.Text,
-                    GhiChu = txtGhiChu.Text
+                    MaLoai = txtMLSP.Text.Trim(),
+                    TenLoai = txtTLSP.Text.Trim(),
+                    GhiChu = txtGhiChu.Text.Trim()
                 };
 
-                db.LoaiSanPhams.InsertOnSubmit(newLSP);
+                db.LoaiSanPhams.InsertOnSubmit(loaiSP);
                 db.SubmitChanges();
-                LoadData(); // Refresh DataGridView
-                ClearInputs();
-                MessageBox.Show("Thêm thành công!", "Thông báo");
+
+                MessageBox.Show("✅ Thêm loại sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadLoaiSanPham();
+
+                txtMLSP.Enabled = false; // Không cho sửa mã sau khi thêm
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi");
+                MessageBox.Show("Lỗi khi thêm loại sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        // Sửa loại sản phẩm
+        private void LamMoi()
+        {
+            txtMLSP.Text = "";
+            txtTLSP.Text = "";
+            txtGhiChu.Text = "";
+            txtMLSP.Enabled = true;
+            LoadLoaiSanPham();
+        }
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            LamMoi();
+        }
+
         private void btnSua_Click(object sender, EventArgs e)
         {
-            if (dgvLSP.SelectedRows.Count == 0)
+            try
             {
-                MessageBox.Show("Vui lòng chọn một dòng để sửa!", "Lỗi");
-                return;
-            }
-
-            string maLSP = dgvLSP.SelectedRows[0].Cells["MaLSP"].Value.ToString();
-            var lsp = db.LoaiSanPhams.FirstOrDefault(x => x.MaLoai == maLSP);
-
-            if (lsp != null)
-            {
-                lsp.TenLoai = txtTLSP.Text;
-                lsp.GhiChu = txtGhiChu.Text;
-                db.SubmitChanges();
-                LoadData();
-                MessageBox.Show("Cập nhật thành công!", "Thông báo");
-            }
-        }
-
-        // Xóa loại sản phẩm
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (dgvLSP.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Vui lòng chọn một dòng để xóa!", "Lỗi");
-                return;
-            }
-
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận",
-                MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                string maLSP = dgvLSP.SelectedRows[0].Cells["MaLSP"].Value.ToString();
-                var lsp = db.LoaiSanPhams.FirstOrDefault(x => x.MaLoai == maLSP);
-
-                if (lsp != null)
+                var maLoai = txtMLSP.Text;
+                var loaiSP = db.LoaiSanPhams.FirstOrDefault(l => l.MaLoai == maLoai);
+                if (loaiSP != null)
                 {
-                    db.LoaiSanPhams.DeleteOnSubmit(lsp);
+                    loaiSP.TenLoai = txtTLSP.Text;
+                    loaiSP.GhiChu = txtGhiChu.Text;
                     db.SubmitChanges();
-                    LoadData();
-                    MessageBox.Show("Xóa thành công!", "Thông báo");
+                    MessageBox.Show("Cập nhật loại sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadLoaiSanPham();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy loại sản phẩm với mã: " + maLoai, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-        }
-
-        // Làm mới form
-        private void btnLM_Click(object sender, EventArgs e)
-        {
-            ClearInputs();
-        }
-
-        // Xử lý khi chọn một dòng trong DataGridView
-        private void dgvLSP_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
+            catch (Exception ex)
             {
-                DataGridViewRow row = dgvLSP.Rows[e.RowIndex];
-                txtMLSP.Text = row.Cells["MaLSP"].Value.ToString();
-                txtTLSP.Text = row.Cells["TenLSP"].Value.ToString();
-                txtGhiChu.Text = row.Cells["GhiChu"]?.Value?.ToString() ?? "";
+                MessageBox.Show("Lỗi khi cập nhật loại sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        // Clear các ô nhập liệu
-        private void ClearInputs()
+        private void btnXoa_Click(object sender, EventArgs e)
         {
-            txtMLSP.Clear();
-            txtTLSP.Clear();
-            txtGhiChu.Clear();
+            try
+            {
+                var maLoai = txtMLSP.Text;
+                var loaiSP = db.LoaiSanPhams.FirstOrDefault(l => l.MaLoai == maLoai);
+                if (loaiSP != null)
+                {
+                    db.LoaiSanPhams.DeleteOnSubmit(loaiSP);
+                    db.SubmitChanges();
+                    MessageBox.Show("Xóa loại sản phẩm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LamMoi();
+                    LoadLoaiSanPham();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy loại sản phẩm với mã: " + maLoai, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa loại sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            LamMoi();
         }
 
-        // Các sự kiện TextChanged giữ nguyên
-        private void txtMLSP_TextChanged(object sender, EventArgs e) { }
-        private void txtTLSP_TextChanged(object sender, EventArgs e) { }
-        private void txtGhiChu_TextChanged(object sender, EventArgs e) { }
-
-        private void dgvLSP_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvLSP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0 && e.RowIndex < dgvLSP.Rows.Count)
+            {
+                var row = dgvLSP.Rows[e.RowIndex];
+                txtMLSP.Text = row.Cells["MaLoai"].Value.ToString();
+                txtTLSP.Text = row.Cells["TenLoai"].Value.ToString();
+                txtGhiChu.Text = row.Cells["GhiChu"].Value != null ? row.Cells["GhiChu"].Value.ToString() : "";
+                txtMLSP.Enabled = false;
 
+            }
         }
     }
 }
